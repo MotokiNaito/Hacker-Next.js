@@ -1,6 +1,7 @@
 import fetch from "isomorphic-fetch";
 import Error from "next/error";
 import Layout from "../components/Layout";
+import CommetList from "../components/CommetList";
 
 export default class Story extends React.Component {
   static async getInitialProps({ req, res, query }) {
@@ -23,16 +24,19 @@ export default class Story extends React.Component {
     }
 
     return (
-      <Layout title={story.title}>
+      <Layout title={story.title} backButton={true}>
         <main>
           <h1 className="story-title">
             <a href={story.url}>{story.title}</a>
-            <div className="story-details">
-              <strong>{story.points} points</strong>
-              <strong>{story.comments_count} comments</strong>
-              <strong>{story.time_ago}</strong>
-            </div>
           </h1>
+
+          <div className="story-details">
+            <strong>{story.points} points</strong>
+            <strong>{story.comments_count} comments</strong>
+            <strong>{story.time_ago}</strong>
+          </div>
+
+          {story.comments.length > 0 ? <CommetList comments={story.comments} /> : <h1>Sorry No Comments</h1>}
         </main>
 
         <style jsx>{`
