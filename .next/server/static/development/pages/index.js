@@ -2087,6 +2087,17 @@ function (_React$Component) {
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(Index, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js").then(function (registration) {
+          console.log("service worker registration successful", registration);
+        }).catch(function (err) {
+          console.log(err);
+        });
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -2098,7 +2109,7 @@ function (_React$Component) {
           statusCode: 503,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 28
+            lineNumber: 41
           },
           __self: this
         });
@@ -2109,41 +2120,41 @@ function (_React$Component) {
         description: "A Hacker News Clone with next.js",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 44
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_StoryList__WEBPACK_IMPORTED_MODULE_12__["default"], {
         stories: stories,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 45
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("footer", {
         className: "jsx-4212713147",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 47
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_11___default.a, {
         href: "/?page=".concat(page + 1),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 48
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
         className: "jsx-4212713147",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 49
         },
         __self: this
       }, "Next Pge (", page + 1, ")"))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_7___default.a, {
         id: "4212713147",
         __self: this
-      }, "footer.jsx-4212713147{padding:1em;}footer.jsx-4212713147 a.jsx-4212713147{font-weight:bold;color:black;text-decortion:none;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tb3Rva2kvU2l0ZXMvaGFja2VyLW5leHQvcGFnZXMvaW5kZXguanN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXVDb0IsQUFHeUIsQUFHSyxZQUZuQixLQUdjLFlBQ1Esb0JBQ3RCIiwiZmlsZSI6Ii9Vc2Vycy9tb3Rva2kvU2l0ZXMvaGFja2VyLW5leHQvcGFnZXMvaW5kZXguanN4Iiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IGZldGNoIGZyb20gXCJpc29tb3JwaGljLWZldGNoXCI7XG5pbXBvcnQgRXJyb3IgZnJvbSBcIm5leHQvZXJyb3JcIjtcbmltcG9ydCBMaW5rIGZyb20gXCJuZXh0L2xpbmtcIjtcbmltcG9ydCBTdG9yeUxpc3QgZnJvbSBcIi4uL2NvbXBvbmVudHMvU3RvcnlMaXN0XCI7XG5pbXBvcnQgTGF5b3V0IGZyb20gXCIuLi9jb21wb25lbnRzL0xheW91dFwiO1xuXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBJbmRleCBleHRlbmRzIFJlYWN0LkNvbXBvbmVudCB7XG4gIHN0YXRpYyBhc3luYyBnZXRJbml0aWFsUHJvcHMoeyByZXEsIHJlcywgcXVlcnkgfSkge1xuICAgIGxldCBzdG9yaWVzO1xuICAgIGxldCBwYWdlO1xuXG4gICAgdHJ5IHtcbiAgICAgIHBhZ2UgPSBOdW1iZXIocXVlcnkucGFnZSkgfHwgMTtcbiAgICAgIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goYGh0dHBzOi8vbm9kZS1obmFwaS5oZXJva3VhcHAuY29tL25ld3M/cGFnZT0ke3BhZ2V9YCk7XG4gICAgICBzdG9yaWVzID0gYXdhaXQgcmVzcG9uc2UuanNvbigpO1xuICAgIH0gY2F0Y2ggKGVycikge1xuICAgICAgY29uc29sZS5sb2coZXJyKTtcbiAgICAgIHN0b3JpZXMgPSBbXTtcbiAgICB9XG5cbiAgICByZXR1cm4geyBwYWdlLCBzdG9yaWVzIH07XG4gIH1cblxuICByZW5kZXIoKSB7XG4gICAgY29uc3QgeyBzdG9yaWVzLCBwYWdlIH0gPSB0aGlzLnByb3BzO1xuXG4gICAgaWYgKHN0b3JpZXMubGVuZ3RoID09PSAwKSB7XG4gICAgICByZXR1cm4gPEVycm9yIHN0YXR1c0NvZGU9ezUwM30gLz47XG4gICAgfVxuICAgIHJldHVybiAoXG4gICAgICA8TGF5b3V0IHRpdGxlPVwiSGFja2VyIE5leHRcIiBkZXNjcmlwdGlvbj1cIkEgSGFja2VyIE5ld3MgQ2xvbmUgd2l0aCBuZXh0LmpzXCI+XG4gICAgICAgIDxTdG9yeUxpc3Qgc3Rvcmllcz17c3Rvcmllc30gLz5cblxuICAgICAgICA8Zm9vdGVyPlxuICAgICAgICAgIDxMaW5rIGhyZWY9e2AvP3BhZ2U9JHtwYWdlICsgMX1gfT5cbiAgICAgICAgICAgIDxhPk5leHQgUGdlICh7cGFnZSArIDF9KTwvYT5cbiAgICAgICAgICA8L0xpbms+XG4gICAgICAgIDwvZm9vdGVyPlxuXG4gICAgICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgICAgICBmb290ZXIge1xuICAgICAgICAgICAgcGFkZGluZzogMWVtO1xuICAgICAgICAgIH1cbiAgICAgICAgICBmb290ZXIgYSB7XG4gICAgICAgICAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICAgICAgICAgIGNvbG9yOiBibGFjaztcbiAgICAgICAgICAgIHRleHQtZGVjb3J0aW9uOiBub25lO1xuICAgICAgICAgIH1cbiAgICAgICAgYH08L3N0eWxlPlxuICAgICAgPC9MYXlvdXQ+XG4gICAgKTtcbiAgfVxufVxuIl19 */\n/*@ sourceURL=/Users/motoki/Sites/hacker-next/pages/index.jsx */"));
+      }, "footer.jsx-4212713147{padding:1em;}footer.jsx-4212713147 a.jsx-4212713147{font-weight:bold;color:black;text-decortion:none;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tb3Rva2kvU2l0ZXMvaGFja2VyLW5leHQvcGFnZXMvaW5kZXguanN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQW9Eb0IsQUFHeUIsQUFHSyxZQUZuQixLQUdjLFlBQ1Esb0JBQ3RCIiwiZmlsZSI6Ii9Vc2Vycy9tb3Rva2kvU2l0ZXMvaGFja2VyLW5leHQvcGFnZXMvaW5kZXguanN4Iiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IGZldGNoIGZyb20gXCJpc29tb3JwaGljLWZldGNoXCI7XG5pbXBvcnQgRXJyb3IgZnJvbSBcIm5leHQvZXJyb3JcIjtcbmltcG9ydCBMaW5rIGZyb20gXCJuZXh0L2xpbmtcIjtcbmltcG9ydCBTdG9yeUxpc3QgZnJvbSBcIi4uL2NvbXBvbmVudHMvU3RvcnlMaXN0XCI7XG5pbXBvcnQgTGF5b3V0IGZyb20gXCIuLi9jb21wb25lbnRzL0xheW91dFwiO1xuXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBJbmRleCBleHRlbmRzIFJlYWN0LkNvbXBvbmVudCB7XG4gIHN0YXRpYyBhc3luYyBnZXRJbml0aWFsUHJvcHMoeyByZXEsIHJlcywgcXVlcnkgfSkge1xuICAgIGxldCBzdG9yaWVzO1xuICAgIGxldCBwYWdlO1xuXG4gICAgdHJ5IHtcbiAgICAgIHBhZ2UgPSBOdW1iZXIocXVlcnkucGFnZSkgfHwgMTtcbiAgICAgIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goYGh0dHBzOi8vbm9kZS1obmFwaS5oZXJva3VhcHAuY29tL25ld3M/cGFnZT0ke3BhZ2V9YCk7XG4gICAgICBzdG9yaWVzID0gYXdhaXQgcmVzcG9uc2UuanNvbigpO1xuICAgIH0gY2F0Y2ggKGVycikge1xuICAgICAgY29uc29sZS5sb2coZXJyKTtcbiAgICAgIHN0b3JpZXMgPSBbXTtcbiAgICB9XG5cbiAgICByZXR1cm4geyBwYWdlLCBzdG9yaWVzIH07XG4gIH1cblxuICBjb21wb25lbnREaWRNb3VudCgpIHtcbiAgICBpZiAoXCJzZXJ2aWNlV29ya2VyXCIgaW4gbmF2aWdhdG9yKSB7XG4gICAgICBuYXZpZ2F0b3Iuc2VydmljZVdvcmtlclxuICAgICAgICAucmVnaXN0ZXIoXCIvc2VydmljZS13b3JrZXIuanNcIilcbiAgICAgICAgLnRoZW4ocmVnaXN0cmF0aW9uID0+IHtcbiAgICAgICAgICBjb25zb2xlLmxvZyhcInNlcnZpY2Ugd29ya2VyIHJlZ2lzdHJhdGlvbiBzdWNjZXNzZnVsXCIsIHJlZ2lzdHJhdGlvbik7XG4gICAgICAgIH0pXG4gICAgICAgIC5jYXRjaChlcnIgPT4ge1xuICAgICAgICAgIGNvbnNvbGUubG9nKGVycik7XG4gICAgICAgIH0pO1xuICAgIH1cbiAgfVxuXG4gIHJlbmRlcigpIHtcbiAgICBjb25zdCB7IHN0b3JpZXMsIHBhZ2UgfSA9IHRoaXMucHJvcHM7XG5cbiAgICBpZiAoc3Rvcmllcy5sZW5ndGggPT09IDApIHtcbiAgICAgIHJldHVybiA8RXJyb3Igc3RhdHVzQ29kZT17NTAzfSAvPjtcbiAgICB9XG4gICAgcmV0dXJuIChcbiAgICAgIDxMYXlvdXQgdGl0bGU9XCJIYWNrZXIgTmV4dFwiIGRlc2NyaXB0aW9uPVwiQSBIYWNrZXIgTmV3cyBDbG9uZSB3aXRoIG5leHQuanNcIj5cbiAgICAgICAgPFN0b3J5TGlzdCBzdG9yaWVzPXtzdG9yaWVzfSAvPlxuXG4gICAgICAgIDxmb290ZXI+XG4gICAgICAgICAgPExpbmsgaHJlZj17YC8/cGFnZT0ke3BhZ2UgKyAxfWB9PlxuICAgICAgICAgICAgPGE+TmV4dCBQZ2UgKHtwYWdlICsgMX0pPC9hPlxuICAgICAgICAgIDwvTGluaz5cbiAgICAgICAgPC9mb290ZXI+XG5cbiAgICAgICAgPHN0eWxlIGpzeD57YFxuICAgICAgICAgIGZvb3RlciB7XG4gICAgICAgICAgICBwYWRkaW5nOiAxZW07XG4gICAgICAgICAgfVxuICAgICAgICAgIGZvb3RlciBhIHtcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgICAgICAgICAgY29sb3I6IGJsYWNrO1xuICAgICAgICAgICAgdGV4dC1kZWNvcnRpb246IG5vbmU7XG4gICAgICAgICAgfVxuICAgICAgICBgfTwvc3R5bGU+XG4gICAgICA8L0xheW91dD5cbiAgICApO1xuICB9XG59XG4iXX0= */\n/*@ sourceURL=/Users/motoki/Sites/hacker-next/pages/index.jsx */"));
     }
   }], [{
     key: "getInitialProps",
